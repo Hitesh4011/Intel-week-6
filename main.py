@@ -33,6 +33,6 @@ with st.container():
     geolocation_state_seller = st.number_input("Geolocation State (Seller)", min_value=1, max_value=50, value=20)
     distance = st.number_input("Distance (km)", min_value=0.1, value=300.5)
 
-    # Button to predict estimated wait time
-    if st.button("Calculate Estimated Time"):
+    # # Button to predict estimated wait time
+    # if st.button("Calculate Estimated Time"):
         
