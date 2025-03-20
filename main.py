@@ -8,10 +8,6 @@ import numpy as np
 # Streamlit UI
 st.set_page_config(page_title="Estimate Delivery Time", layout="wide")
 
-# Sidebar (Empty for now)
-with st.sidebar:
-    st.write("")
-
 # Main Container
 with st.container():
     st.title("📦 Estimate Delivery Time Prediction")
