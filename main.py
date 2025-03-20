@@ -35,15 +35,4 @@ with st.container():
 
     # Button to predict estimated wait time
     if st.button("Calculate Estimated Time"):
-        # Prepare input data
-        # input_data = np.array([[purchase_day, purchase_month, year, product_size_cm3,
-        #                         product_weight_g, geolocation_state_customer, 
-        #                         geolocation_state_seller, distance]])
-
-        # # Make prediction
-        # predicted_wait_time = model.predict(input_data)[0]
-
-        # # Display result
-        # st.success(f"📅 Estimated Wait Time: **{predicted_wait_time:.2f} days**")
-
-# Run this script using: `streamlit run app.py`
+        
