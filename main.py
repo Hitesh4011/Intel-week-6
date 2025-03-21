@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pickle
 import requests
+import joblib
 
 # Load the trained model from the same repository
 MODEL_URL = "xgboost_model.pkl"
@@ -12,7 +13,7 @@ MODEL_URL = "xgboost_model.pkl"
 #         model = pickle.load(file)
 #     return model
 
-model = pickle.load(open(MODEL_URL, "rb"))
+model = joblib.load(MODEL_URL)
 
 # Streamlit UI
 st.set_page_config(page_title="Estimate Delivery Time", layout="wide")
