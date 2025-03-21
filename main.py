@@ -4,15 +4,15 @@ import pickle
 import requests
 
 # Load the trained model from the same repository
-model_url = "xgboost_model.pkl"
+# model_url = "xgboost_model.pkl"
 
-@st.cache_resource()
-def load_model():
-    with open(model_url, "rb") as file:
-        model = pickle.load(file)
-    return model
+# @st.cache_resource()
+# def load_model():
+#     with open(model_url, "rb") as file:
+#         model = pickle.load(file)
+#     return model
 
-model = load_model()
+# model = load_model()
 
 # Streamlit UI
 st.set_page_config(page_title="Estimate Delivery Time", layout="wide")
@@ -39,14 +39,16 @@ with st.container():
 
     # Button to predict estimated wait time
     if st.button("Calculate Estimated Time"):
-        input_features = np.array([[
-            purchase_day, purchase_month, year, product_size_cm3,
-            product_weight_g, geolocation_state_customer,
-            geolocation_state_seller, distance
-        ]])
+        # input_features = np.array([[
+        #     purchase_day, purchase_month, year, product_size_cm3,
+        #     product_weight_g, geolocation_state_customer,
+        #     geolocation_state_seller, distance
+        # ]])
         
-        prediction = model.predict(input_features)
-        estimated_days = round(prediction[0], 2)
+        # prediction = model.predict(input_features)
+        # estimated_days = round(prediction[0], 2)
+
+        estimated_days = 1
         
         st.success(f"📅 Estimated Delivery Time: {estimated_days} days")
         
