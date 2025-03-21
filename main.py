@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import pickle
-import requests
 
 # Load the trained model from the same repository
 model_url = os.path.join(os.path.dirname(__file__), "xgboost_model.pkl")
