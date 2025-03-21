@@ -48,7 +48,6 @@ with st.container():
         
         prediction = model.predict(input_features)
         estimated_days = round(prediction[0], 2)
-        estimated_days = 0
         
         st.success(f"📅 Estimated Delivery Time: {estimated_days} days")
         
