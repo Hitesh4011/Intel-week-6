@@ -3,4 +3,3 @@ numpy
 xgboost
 pickle5
 requests
-joblib
