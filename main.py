@@ -38,16 +38,14 @@ with st.container():
 
     # Button to predict estimated wait time
     if st.button("Calculate Estimated Time"):
-        # input_features = np.array([[
-        #     purchase_day, purchase_month, year, product_size_cm3,
-        #     product_weight_g, geolocation_state_customer,
-        #     geolocation_state_seller, distance
-        # ]])
+        input_features = np.array([[
+            purchase_day, purchase_month, year, product_size_cm3,
+            product_weight_g, geolocation_state_customer,
+            geolocation_state_seller, distance
+        ]])
         
-        # prediction = model.predict(input_features)
-        # estimated_days = round(prediction[0], 2)
-
-        estimated_days = 1
+        prediction = model.predict(input_features)
+        estimated_days = round(prediction[0], 2)
         
         st.success(f"📅 Estimated Delivery Time: {estimated_days} days")
         
