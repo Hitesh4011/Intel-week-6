@@ -26,7 +26,7 @@ with st.container():
     col1, col2 = st.columns(2)
 
     with col1:
-        purchase_day = st.number_input("Purchase Day", min_value=1, max_value=7, value=15)
+        purchase_day = st.number_input("Purchase Day", min_value=1, max_value=7, value=2)
         purchase_month = st.number_input("Purchase Month", min_value=1, max_value=12, value=6)
         year = st.number_input("Year", min_value=2000, max_value=2025, value=2025)
         geolocation_state_seller = st.number_input("Geolocation State (Seller)", min_value=0, max_value=26, value=20)
