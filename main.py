@@ -1,5 +1,9 @@
 import streamlit as st
 import numpy as np
+import pickle
+import requests
+import xgboost as xgb
+from io import BytesIO
 
 # Load the trained model from the same repository
 MODEL_URL = "xgboost_model.pkl"
