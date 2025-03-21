@@ -4,13 +4,13 @@ import numpy as np
 # Load the trained model from the same repository
 MODEL_URL = "xgboost_model.pkl"
 
-@st.cache_resource()
-def load_model():
-    with open(MODEL_URL, "rb") as file:
-        model = pickle.load(file)
-    return model
+# @st.cache_resource()
+# def load_model():
+#     with open(MODEL_URL, "rb") as file:
+#         model = pickle.load(file)
+#     return model
 
-model = load_model()
+model = pickle.load(open(MODEL_URL, "rb"))
 
 # Streamlit UI
 st.set_page_config(page_title="Estimate Delivery Time", layout="wide")
