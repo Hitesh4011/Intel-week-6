@@ -8,9 +8,17 @@ model_url = "xgboost_model.pkl"
 
 @st.cache_resource()
 def load_model():
-    with open(model_url, "rb") as file:
-        model = pickle.load(file)
-    return model
+    try:
+        # Ensure the model file exists
+        if not os.path.exists(model_url):
+            raise FileNotFoundError(f"Model file not found at {model_url}")
+        
+        with open(model_url, "rb") as file:
+            model = pickle.load(file)
+        return model
+    except Exception as e:
+        print(f"Error loading model: {e}")
+        return None
 
 model = load_model()
 
