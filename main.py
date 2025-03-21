@@ -1,9 +1,16 @@
 import streamlit as st
 import numpy as np
 
-# Load the trained model
-# model = xgb.XGBRegressor()
-# model.load_model("xgboost_model.json")  # Ensure this file exists
+# Load the trained model from the same repository
+MODEL_URL = "xgboost_model.pkl"
+
+@st.cache_resource()
+def load_model():
+    with open(MODEL_URL, "rb") as file:
+        model = pickle.load(file)
+    return model
+
+model = load_model()
 
 # Streamlit UI
 st.set_page_config(page_title="Estimate Delivery Time", layout="wide")
@@ -28,6 +35,16 @@ with st.container():
     geolocation_state_seller = st.number_input("Geolocation State (Seller)", min_value=1, max_value=50, value=20)
     distance = st.number_input("Distance (km)", min_value=0.1, value=300.5)
 
-    # # Button to predict estimated wait time
-    # if st.button("Calculate Estimated Time"):
+    # Button to predict estimated wait time
+    if st.button("Calculate Estimated Time"):
+        input_features = np.array([[
+            purchase_day, purchase_month, year, product_size_cm3,
+            product_weight_g, geolocation_state_customer,
+            geolocation_state_seller, distance
+        ]])
+        
+        prediction = model.predict(input_features)
+        estimated_days = round(prediction[0], 2)
+        
+        st.success(f"📅 Estimated Delivery Time: {estimated_days} days")
         
