@@ -4,7 +4,7 @@ import pickle
 import requests
 
 # Load the trained model from the same repository
-# model_url = "xgboost_model.pkl"
+model_url = "xgboost_model.pkl"
 
 # @st.cache_resource()
 # def load_model():
