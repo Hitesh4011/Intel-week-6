@@ -4,21 +4,13 @@ import pickle
 import requests
 
 # Load the trained model from the same repository
-model_url = "xgboost_model.pkl"
+model_url = os.path.join(os.path.dirname(__file__), "xgboost_model.pkl")
 
 @st.cache_resource()
 def load_model():
-    try:
-        # Ensure the model file exists
-        if not os.path.exists(model_url):
-            raise FileNotFoundError(f"Model file not found at {model_url}")
-        
-        with open(model_url, "rb") as file:
-            model = pickle.load(file)
-        return model
-    except Exception as e:
-        print(f"Error loading model: {e}")
-        return None
+    with open(model_url, "rb") as file:
+        model = pickle.load(file)
+    return model
 
 model = load_model()
 
