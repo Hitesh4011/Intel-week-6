@@ -16,8 +16,7 @@ def load_model():
 
 model = load_model()
 
-# Streamlit UI
-st.set_page_config(page_title="Estimate Delivery Time", layout="wide")
+
 
 # Main Container
 with st.container():
