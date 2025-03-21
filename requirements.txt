@@ -2,4 +2,3 @@ streamlit
 numpy
 xgboost
 pickle5
-requests
